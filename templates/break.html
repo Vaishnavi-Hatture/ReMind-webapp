@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remind – Pause</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="overlay">
+
+  <div class="break-card">
+
+    <h2 class="break-title">
+      Time for a Short Pause
+    </h2>
+
+    <p class="break-text">
+      You’ve been scrolling for a while.<br>
+      Let’s take a moment to reset your mind.
+    </p>
+
+    <div class="timer" id="breakTimer">
+      ⏱ 05:00
+    </div>
+
+    <a href="/swipe" class="primary-btn"
+       style="text-decoration:none; display:inline-block; text-align:center;">
+      Start 5-Minute Psychological Reset
+    </a>
+
+    <p class="hint">
+      This break will end automatically
+    </p>
+
+  </div>
+
+</div>
+
+
+<script>
+
+let minutes = 5;
+let seconds = 0;
+
+const timer = document.getElementById("breakTimer");
+
+const breakCountdown = setInterval(function(){
+
+    if(seconds === 0){
+        if(minutes === 0){
+            clearInterval(breakCountdown);
+
+            // After break ends → go to decision page
+            window.location.href = "/decision";
+            return;
+        }
+
+        minutes--;
+        seconds = 59;
+    }
+    else{
+        seconds--;
+    }
+
+    timer.textContent =
+        "⏱ " +
+        String(minutes).padStart(2,'0') +
+        ":" +
+        String(seconds).padStart(2,'0');
+
+},1000);
+
+</script>
+
+</body>
+</html>

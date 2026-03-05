@@ -1,0 +1,550 @@
+/* =========================
+   Global Reset & Font
+========================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Inter","Segoe UI",Arial,sans-serif;
+}
+
+
+/* =========================
+   Base Page Style
+========================= */
+body{
+
+  min-height:100vh;
+
+  background:
+    linear-gradient(
+      rgba(247,249,252,0.85),
+      rgba(238,243,250,0.9)
+    ),
+    url("https://images.unsplash.com/photo-1557683316-973673baf926");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:#2e2e2e;
+}
+
+
+/* =========================
+   MAIN SETUP PAGE
+========================= */
+.container{
+
+  max-width:420px;
+  width:90%;
+
+  background:rgba(255,255,255,0.92);
+  backdrop-filter:blur(8px);
+
+  padding:40px 36px;
+
+  border-radius:18px;
+
+  box-shadow:
+      0 10px 30px rgba(0,0,0,0.25),
+      0 2px 8px rgba(0,0,0,0.5);
+
+  transition:transform 0.2s ease;
+}
+
+.container:hover{
+  transform:translateY(-3px);
+}
+
+
+/* =========================
+   Title
+========================= */
+h1{
+  text-align:center;
+  font-size:34px;
+  font-weight:700;
+
+  background:linear-gradient(90deg,#609cf6,#2bdc28);
+  -webkit-background-clip:text; 
+  -webkit-text-fill-color:transparent;
+
+  margin-bottom:8px;
+}
+
+
+/* Subtitle */
+.subtitle{
+  text-align:center;
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:28px;
+}
+
+
+/* =========================
+   Sections
+========================= */
+.section{
+  margin-bottom:26px;
+}
+
+
+/* Labels */
+.section label,
+.section p{
+  font-size:14px;
+  font-weight:500;
+  margin-bottom:10px;
+  display:block;
+  color:#374151;
+}
+
+
+/* Helper text */
+.helper-text{
+  font-size:12px;
+  color:#6b7280;
+  margin-top:6px;
+}
+
+
+/* =========================
+   Input
+========================= */
+input[type="number"]{
+
+  width:100%;
+  padding:14px;
+
+  border-radius:10px;
+  border:1px solid #e0e4ec;
+
+  font-size:15px;
+}
+
+input[type="number"]:focus{
+  outline:none;
+  border-color:#4a6fa5;
+}
+
+
+/* =========================
+   Interests Grid
+========================= */
+.interests{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+
+/* Interest buttons */
+.interests button{
+
+  padding:10px 16px;
+
+  border-radius:20px;
+  border:1px solid #e0e4ec;
+
+  background:#ffffff;
+
+  font-size:13px;
+
+  cursor:pointer;
+
+  color:#374151;
+
+  transition:all 0.2s ease;
+}
+
+.interests button:hover{
+  background:#eef3fa;
+  transform:scale(1.05);
+}
+
+
+/* Selected interest */
+.interests button.selected{
+
+  background:#91c790;
+  border-color:#9ad399;
+  color:#ffffff;
+}
+
+
+/* =========================
+   Primary Button
+========================= */
+.primary-btn{
+
+  width:100%;
+  padding:15px;
+
+  border:none;
+
+  border-radius:12px;
+
+  background:linear-gradient(
+    90deg,
+    #4a6fa5,
+    #7fb77e
+  );
+
+  color:white;
+
+  font-size:16px;
+  font-weight:600;
+
+  cursor:pointer;
+
+  margin-top:14px;
+
+  transition:all 0.25s ease;
+}
+
+.primary-btn:hover{
+
+  transform:translateY(-2px);
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+/* Footer */
+.footer-text{
+  margin-top:20px;
+  font-size:12px;
+  text-align:center;
+  color:#6b7280;
+}
+
+
+
+/* =========================
+   BREAK SCREEN
+========================= */
+
+.overlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(46,46,46,0.45);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* Break card */
+.break-card{
+
+  background:#ffffff;
+
+  width:90%;
+  max-width:360px;
+
+  padding:36px 30px;
+
+  border-radius:20px;
+
+  text-align:center;
+
+  box-shadow:0 25px 45px rgba(0,0,0,0.15);
+}
+
+
+.break-title{
+  font-size:22px;
+  font-weight:600;
+  color:#4a6fa5;
+  margin-bottom:10px;
+}
+
+
+.break-text{
+  font-size:14px;
+  color:#6b7280;
+  line-height:1.6;
+  margin-bottom:24px;
+}
+
+
+.timer{
+  font-size:26px;
+  font-weight:500;
+  color:#4a6fa5;
+  margin-bottom:24px;
+}
+
+
+.hint{
+  margin-top:16px;
+  font-size:12px;
+  color:#6b7280;
+}
+
+
+
+/* =========================
+   SWIPE / RESET SCREEN
+========================= */
+
+.swipe-container{
+  max-width:420px;
+  margin:60px auto;
+  text-align:center;
+}
+
+
+.swipe-title{
+  font-size:22px;
+  font-weight:600;
+  color:#4a6fa5;
+  margin-bottom:8px;
+}
+
+
+.swipe-subtitle{
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:28px;
+}
+
+
+/* Swipe card */
+.swipe-card{
+
+  background:#ffffff;
+
+  border-radius:20px;
+
+  padding:32px 26px;
+
+  box-shadow:0 18px 35px rgba(0,0,0,0.08);
+
+  margin-bottom:24px;
+}
+
+
+.card-category{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:#7fb77e;
+  margin-bottom:10px;
+}
+
+
+.card-title{
+  font-size:20px;
+  font-weight:600;
+  color:#2e2e2e;
+  margin-bottom:12px;
+}
+
+
+.card-text{
+  font-size:14px;
+  color:#6b7280;
+  line-height:1.6;
+}
+
+
+/* Timer
+.swipe-timer{
+  font-size:14px;
+  color:#4a6fa5;
+  font-weight:500;
+} */
+
+
+
+/* =========================
+   WAITING / TIMER PAGE
+========================= */
+
+.waiting-container{
+  text-align:center;
+}
+
+.waiting-title{
+  font-size:24px;
+  font-weight:600;
+  color:#4a6fa5;
+  margin-bottom:10px;
+}
+
+.waiting-text{
+  font-size:14px;
+  color:#6b7280;
+  margin-bottom:25px;
+}
+
+.waiting-timer{
+
+  font-size:48px;
+  font-weight:700;
+
+  background:linear-gradient(90deg,#4a6fa5,#7fb77e);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  margin-top:10px;
+}
+
+.waiting-note{
+  font-size:12px;
+  color:#6b7280;
+  margin-top:18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   SWIPE ACTION BUTTONS
+========================= */
+
+.swipe-actions{
+  display:flex;
+  gap:14px;
+  margin-bottom:20px;
+}
+
+
+.btn-not-interested{
+
+  flex:1;
+  padding:14px;
+
+  border-radius:12px;
+  border:1px solid #e0e4ec;
+
+  background:#ffffff;
+
+  color:#6b7280;
+
+  font-size:14px;
+
+  cursor:pointer;
+}
+
+.btn-not-interested:hover{
+  background:#f0f4fa;
+}
+
+
+.btn-interested{
+
+  flex:1;
+  padding:14px;
+
+  border-radius:12px;
+
+  border:none;
+
+  background:#7fb77e;
+
+  color:#ffffff;
+
+  font-size:14px;
+
+  cursor:pointer;
+}
+
+.btn-interested:hover{
+  background:#6aa96b;
+}
+
+
+
+/* =========================
+   DECISION PAGE
+========================= */
+
+.decision-container{
+  text-align:center;
+  padding:40px 30px;
+}
+
+
+.decision-title{
+  font-size:22px;
+  font-weight:600;
+  color:#4A6FA5;
+  margin-bottom:12px;
+}
+
+
+.decision-subtitle{
+  font-size:14px;
+  color:#6B7280;
+  margin-bottom:30px;
+}
+
+
+.decision-actions{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+
+.btn-primary{
+
+  background:#4A6FA5;
+  color:#fff;
+
+  padding:14px;
+
+  border-radius:10px;
+
+  text-decoration:none;
+
+  font-weight:500;
+}
+
+.btn-primary:hover{
+  background:#3d5d8a;
+}
+
+
+.btn-secondary{
+
+  background:#E5E7EB;
+  color:#374151;
+
+  padding:14px;
+
+  border-radius:10px;
+
+  text-decoration:none;
+
+  font-weight:500;
+}
+
+.btn-secondary:hover{
+  background:#d1d5db;
+}

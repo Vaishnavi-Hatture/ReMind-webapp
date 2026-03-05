@@ -1,0 +1,34 @@
+<body>
+    <div class="swipe-card">
+
+  <p class="card-category"></p>
+
+  <h3 class="card-title"></h3>
+
+  <p class="card-text"></p>
+
+</div>
+<script>
+
+const suggestions = JSON.parse('{{ suggestions | tojson | safe }}');
+
+let index = 0;
+
+function showSuggestion(){
+
+    if(!suggestions || suggestions.length === 0){
+        return;
+    }
+
+    document.querySelector(".card-category").innerText = suggestions[index].category;
+
+    document.querySelector(".card-title").innerText = suggestions[index].title;
+
+    document.querySelector(".card-text").innerText = suggestions[index].text;
+
+}
+
+showSuggestion();
+
+</script>
+</body>
