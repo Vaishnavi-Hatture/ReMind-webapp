@@ -61,10 +61,19 @@ def swipe():
         {"category":"Fitness","title":"Stretch","text":"Stretch your arms and back."}
     ],
 
-    "Learning":[
-        {"category":"Learning","title":"Read a short article","text":"Spend 2 minutes learning something."},
-        {"category":"Learning","title":"Learn a new word","text":"Find one new English word."}
-    ],
+   "Learning":[
+    {"category":"Learning","title":"Read a short article","text":"Spend 2 minutes learning something."},
+
+    {"category":"Learning","title":"Word: Resilient","text":"Meaning: Able to recover quickly from difficulties."},
+
+    {"category":"Learning","title":"Word: Curiosity","text":"Meaning: A strong desire to learn or know something."},
+
+    {"category":"Learning","title":"Word: Innovation","text":"Meaning: Creating new ideas or improving existing ones."},
+
+    {"category":"Learning","title":"Word: Discipline","text":"Meaning: The ability to control yourself to achieve goals."},
+
+    {"category":"Learning","title":"Word: Insight","text":"Meaning: A deep understanding of a situation or idea."}
+],
 
     "Career":[
         {"category":"Career","title":"Think of one goal","text":"Write one small career goal."}
