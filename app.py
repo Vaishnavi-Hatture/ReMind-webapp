@@ -56,10 +56,19 @@ def swipe():
 
     content_map = {
 
-    "Fitness":[
-        {"category":"Fitness","title":"Do 5 pushups","text":"Move your body for 1 minute."},
-        {"category":"Fitness","title":"Stretch","text":"Stretch your arms and back."}
-    ],
+   "Fitness":[
+    {"category":"Fitness","title":"Do 5 Pushups","text":"Move your body and activate your muscles."},
+
+    {"category":"Fitness","title":"Stretch Your Arms","text":"Stretch your arms and shoulders for 30 seconds."},
+
+    {"category":"Fitness","title":"Neck Relaxation","text":"Slowly rotate your neck to release tension."},
+
+    {"category":"Fitness","title":"Stand and Walk","text":"Take a short walk around your room."},
+
+    {"category":"Fitness","title":"Deep Squats","text":"Do 5 slow squats to activate your legs."},
+
+    {"category":"Fitness","title":"Posture Reset","text":"Straighten your back and relax your shoulders."}
+],
 
    "Learning":[
     {"category":"Learning","title":"Read a short article","text":"Spend 2 minutes learning something."},
@@ -76,22 +85,60 @@ def swipe():
 ],
 
     "Career":[
-        {"category":"Career","title":"Think of one goal","text":"Write one small career goal."}
-    ],
+    {"category":"Career","title":"Think of One Goal","text":"Write one small career goal for today."},
+
+    {"category":"Career","title":"Skill Reflection","text":"Think about one skill you want to improve."},
+
+    {"category":"Career","title":"Future Planning","text":"Imagine where you want to be in 5 years."},
+
+    {"category":"Career","title":"Quick Learning","text":"Read one paragraph about your field."},
+
+    {"category":"Career","title":"Idea Note","text":"Write down one new idea related to your work."},
+
+    {"category":"Career","title":"Network Thought","text":"Think of one person you can learn from."}
+],
 
     "Mental Health":[
-        {"category":"Mental Health","title":"Take 3 deep breaths","text":"Slow breathing helps calm your mind."}
-    ],
+    {"category":"Mental Health","title":"Take 3 Deep Breaths","text":"Slow breathing helps calm your mind."},
+
+    {"category":"Mental Health","title":"Relax Your Eyes","text":"Look away from the screen for 20 seconds."},
+
+    {"category":"Mental Health","title":"Gratitude Moment","text":"Think of one thing you are grateful for."},
+
+    {"category":"Mental Health","title":"Mindful Pause","text":"Close your eyes and focus on your breathing."},
+
+    {"category":"Mental Health","title":"Positive Thought","text":"Think of one positive thing about today."},
+
+    {"category":"Mental Health","title":"Body Awareness","text":"Relax your shoulders and jaw."}
+],
 
     "Music":[
-        {"category":"Music","title":"Listen to calm music","text":"Play a relaxing song for 2 minutes."},
-        {"category":"Music","title":"Hum your favorite tune","text":"Humming can relax your mind."}
-    ],
+    {"category":"Music","title":"Listen to a Calm Song","text":"Play a relaxing song for a minute."},
+
+    {"category":"Music","title":"Humming Exercise","text":"Hum your favorite tune for relaxation."},
+
+    {"category":"Music","title":"Focus Music","text":"Play instrumental music for better focus."},
+
+    {"category":"Music","title":"Music Memory","text":"Think of a song that motivates you."},
+
+    {"category":"Music","title":"Rhythm Tap","text":"Tap a simple rhythm with your fingers."},
+
+    {"category":"Music","title":"Music Break","text":"Listen to 30 seconds of calming music."}
+],
 
     "Reading":[
-        {"category":"Reading","title":"Read one page","text":"Pick a book and read one page."},
-        {"category":"Reading","title":"Read a quote","text":"Find an inspiring quote and reflect on it."}
-    ]
+    {"category":"Reading","title":"Read One Page","text":"Pick any book and read one page."},
+
+    {"category":"Reading","title":"Quote Reflection","text":"Read an inspiring quote and think about it."},
+
+    {"category":"Reading","title":"Short Story Line","text":"Read one paragraph from a story."},
+
+    {"category":"Reading","title":"Knowledge Snippet","text":"Read one interesting fact."},
+
+    {"category":"Reading","title":"Vocabulary Boost","text":"Learn one new word from a book."},
+
+    {"category":"Reading","title":"Quick Reading","text":"Spend one minute reading something useful."}
+],
 }
 
     suggestions = []
