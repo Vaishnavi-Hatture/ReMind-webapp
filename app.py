@@ -55,24 +55,35 @@ def swipe():
     interests = data.get("interests", [])
 
     content_map = {
-        "Fitness":[
-            {"category":"Fitness","title":"Do 5 pushups","text":"Move your body for 1 minute."},
-            {"category":"Fitness","title":"Stretch","text":"Stretch your arms and back."}
-        ],
 
-        "Learning":[
-            {"category":"Learning","title":"Read a short article ","text":"Spend 2 minutes learning something."},
-            {"category":"Learning","title":"Learn a new word","text":"Find one new English word."}
-        ],
+    "Fitness":[
+        {"category":"Fitness","title":"Do 5 pushups","text":"Move your body for 1 minute."},
+        {"category":"Fitness","title":"Stretch","text":"Stretch your arms and back."}
+    ],
 
-        "Career":[
-            {"category":"Career","title":"Think of one goal","text":"Write one small career goal."}
-        ],
+    "Learning":[
+        {"category":"Learning","title":"Read a short article","text":"Spend 2 minutes learning something."},
+        {"category":"Learning","title":"Learn a new word","text":"Find one new English word."}
+    ],
 
-        "Mental Health":[
-            {"category":"Focus","title":"Take 3 deep breaths","text":"Slow breathing helps calm your mind."}
-        ]
-    }
+    "Career":[
+        {"category":"Career","title":"Think of one goal","text":"Write one small career goal."}
+    ],
+
+    "Mental Health":[
+        {"category":"Mental Health","title":"Take 3 deep breaths","text":"Slow breathing helps calm your mind."}
+    ],
+
+    "Music":[
+        {"category":"Music","title":"Listen to calm music","text":"Play a relaxing song for 2 minutes."},
+        {"category":"Music","title":"Hum your favorite tune","text":"Humming can relax your mind."}
+    ],
+
+    "Reading":[
+        {"category":"Reading","title":"Read one page","text":"Pick a book and read one page."},
+        {"category":"Reading","title":"Read a quote","text":"Find an inspiring quote and reflect on it."}
+    ]
+}
 
     suggestions = []
 
