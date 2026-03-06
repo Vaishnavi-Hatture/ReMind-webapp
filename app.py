@@ -1,7 +1,30 @@
 from flask import Flask, render_template, request, redirect
 import json
 
+
+from flask import Flask, render_template, request, redirect, session
+from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
+app.secret_key = "remind_secret_key"
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///./remind.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+db = SQLAlchemy(app)
+
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(100), unique=True, nullable=False)
+    password = db.Column(db.String(100), nullable=False)
+    interests = db.Column(db.String(200))
+    time_limit = db.Column(db.Integer)
+
+
+
+
+
 
 @app.route("/")
 def home():
@@ -145,7 +168,7 @@ def swipe():
 
     for interest in interests:
         if interest in content_map:
-            suggestions.extend(content_map[interest])   # important
+            suggestions.extend(content_map[interest])   
 
     return render_template("swap.html", suggestions=suggestions)
 
@@ -156,4 +179,7 @@ def decision_page():
 
 
 if __name__ == "__main__":
+    with app.app_context():
+        db.create_all()
+
     app.run(debug=True)
