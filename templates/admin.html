@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Admin Dashboard - ReMind</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+/* Admin Table Styling */
+
+.admin-container{
+max-width:900px;
+margin:60px auto;
+background:rgba(255,255,255,0.95);
+padding:40px;
+border-radius:18px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.admin-title{
+text-align:center;
+font-size:32px;
+margin-bottom:30px;
+color:#4a6fa5;
+}
+
+.admin-table{
+width:100%;
+border-collapse:collapse;
+overflow:hidden;
+border-radius:12px;
+}
+
+.admin-table th{
+background:#4a6fa5;
+color:white;
+padding:14px;
+font-weight:600;
+}
+
+.admin-table td{
+padding:12px;
+border-bottom:1px solid #e0e4ec;
+}
+
+.admin-table tr:nth-child(even){
+background:#f7f9fc;
+}
+
+.admin-table tr:hover{
+background:#eef3fa;
+}
+
+.stats{
+display:flex;
+justify-content:space-between;
+margin-bottom:25px;
+font-size:14px;
+color:#374151;
+}
+
+.stat-box{
+background:#eef3fa;
+padding:10px 18px;
+border-radius:10px;
+font-weight:500;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<h1 class="admin-title">ReMind Admin Dashboard</h1>
+
+<div class="stats">
+
+<div class="stat-box">
+Total Users: {{ users|length }}
+</div>
+
+</div>
+
+<table class="admin-table">
+
+<tr>
+
+<th>Username</th>
+<th>Selected Interests</th>
+<th>Time Limit</th>
+
+</tr>
+
+{% for user in users %}
+
+<tr>
+
+<td>{{ user.username }}</td>
+
+<td>
+{% if user.interests %}
+{{ user.interests }}
+{% else %}
+Not Selected
+{% endif %}
+</td>
+
+<td>
+{% if user.time_limit %}
+{{ user.time_limit }} sec
+{% else %}
+Not Set
+{% endif %}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>
