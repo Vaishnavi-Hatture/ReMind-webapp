@@ -9,48 +9,47 @@
 
 <body>
 
-<div class="container">
+<div class="container waiting-container">
 
-<h2 style="text-align:center;">Timer Started</h2>
+  <h2 class="waiting-title">Timer Started</h2>
 
-<p style="text-align:center;">
-You can scroll now. We will remind you later.
-</p>
+  <p class="waiting-text">
+    You can scroll now. We'll gently remind you when time is up.
+  </p>
 
-<h1 id="timer" style="text-align:center; margin-top:20px;">
-00:00
-</h1>
+  <div class="waiting-timer" id="timer">
+    {{ "%02d"|format(time_limit|int) }}:00
+  </div>
+
+  <p class="waiting-note">
+    This page is tracking your time in the background.
+  </p>
 
 </div>
 
 <script>
-
 let minutes = parseInt("{{ time_limit }}");
 let seconds = 0;
 
 const timerDisplay = document.getElementById("timer");
 
-const countdown = setInterval(function(){
-
-    if(seconds === 0){
-        if(minutes === 0){
+const countdown = setInterval(function() {
+    if (seconds === 0) {
+        if (minutes === 0) {
             clearInterval(countdown);
             window.location.href = "/break";
             return;
         }
         minutes--;
         seconds = 59;
-    }
-    else{
+    } else {
         seconds--;
     }
 
     timerDisplay.textContent =
-        String(minutes).padStart(2,'0') + ":" +
-        String(seconds).padStart(2,'0');
-
-},1000);
-
+        String(minutes).padStart(2, '0') + ":" +
+        String(seconds).padStart(2, '0');
+}, 1000);
 </script>
 
 </body>

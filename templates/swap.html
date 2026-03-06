@@ -1,34 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Remind – Your Reset</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
-    <div class="swipe-card">
 
-  <p class="card-category"></p>
+<div class="swipe-container">
 
-  <h3 class="card-title"></h3>
+  <h2 class="swipe-title">Your 5-Minute Reset</h2>
+  <p class="swipe-subtitle">Based on your interests — swipe through these suggestions</p>
 
-  <p class="card-text"></p>
+  <div class="swipe-card" id="swipeCard">
+    <p class="card-category" id="cardCategory"></p>
+    <h3 class="card-title" id="cardTitle"></h3>
+    <p class="card-text" id="cardText"></p>
+    <p class="card-counter" id="cardCounter"></p>
+  </div>
+
+  <div class="swipe-actions">
+    <button class="btn-not-interested" id="btnSkip">Skip →</button>
+    <button class="btn-interested" id="btnDone">I Did This ✓</button>
+  </div>
+
+  <a href="/decision" class="primary-btn" style="text-decoration:none; display:block; text-align:center;">
+    I'm Done with My Reset
+  </a>
 
 </div>
-<script>
 
+<script>
 const suggestions = JSON.parse('{{ suggestions | tojson | safe }}');
 
 let index = 0;
 
-function showSuggestion(){
-
-    if(!suggestions || suggestions.length === 0){
+function showCard() {
+    if (!suggestions || suggestions.length === 0) {
+        document.getElementById("swipeCard").innerHTML =
+            "<p class='card-text'>No suggestions found. Please go back and select your interests.</p>";
+        document.querySelector(".swipe-actions").style.display = "none";
         return;
     }
 
-    document.querySelector(".card-category").innerText = suggestions[index].category;
+    const card = suggestions[index];
 
-    document.querySelector(".card-title").innerText = suggestions[index].title;
+    document.getElementById("cardCategory").textContent = card.category;
+    document.getElementById("cardTitle").textContent = card.title;
+    document.getElementById("cardText").textContent = card.text;
+    document.getElementById("cardCounter").textContent =
+        (index + 1) + " of " + suggestions.length;
 
-    document.querySelector(".card-text").innerText = suggestions[index].text;
-
+    const el = document.getElementById("swipeCard");
+    el.classList.remove("card-enter");
+    void el.offsetWidth;
+    el.classList.add("card-enter");
 }
 
-showSuggestion();
+function nextCard() {
+    index = (index + 1) % suggestions.length;
+    showCard();
+}
 
+document.getElementById("btnSkip").addEventListener("click", nextCard);
+document.getElementById("btnDone").addEventListener("click", nextCard);
+
+showCard();
 </script>
+
 </body>
+</html>
