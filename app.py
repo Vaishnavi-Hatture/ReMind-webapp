@@ -61,7 +61,7 @@ def swipe():
         ],
 
         "Learning":[
-            {"category":"Learning","title":"Read a short article","text":"Spend 2 minutes learning something."},
+            {"category":"Learning","title":"Read a short article ","text":"Spend 2 minutes learning something."},
             {"category":"Learning","title":"Learn a new word","text":"Find one new English word."}
         ],
 
